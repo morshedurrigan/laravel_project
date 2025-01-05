@@ -8,11 +8,26 @@
 </head>
 
 <body>
+
     @foreach($users as $user)
     <!-- <p>{{$user}}</p> -->
-     <p>{{$user->name}} - {{$user->email}}</p>
-
+    <p>{{$user->name}} - {{$user->email}}</p>
     @endforeach
+    <ul>
+        @if(count($users) > 2)
+
+        @foreach($users as $user)
+        <li>{{$user->name}}</li>
+        @endforeach
+        @else
+         <p>No users found</p>
+
+        @endif
+
+    </ul>
+
+
+
 
 </body>
 
