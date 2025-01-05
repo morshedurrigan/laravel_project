@@ -1,5 +1,5 @@
 <?php
-
+use App\Models\User;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
@@ -8,7 +8,14 @@ Route::get('/', function () {
 Route::get('/greeting', function () {
     return view('greeting');
 });
+
 Route::get('/users', function () {
-    return view('users');
+    // $users = ['john', 'jane', 'doe'];
+    $users =User::all();
+    return view('users', compact('users'));
+    
 });
+
+
+
 
